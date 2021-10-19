@@ -809,10 +809,6 @@ img{
 /* will be added later if needed */
 
 /*==================== CONTACT ME ====================*/
-.contact__section{
-    padding: 2rem 0 2rem;
-}
-
 .contact__container{
     row-gap: 3rem;
 }
