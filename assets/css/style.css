@@ -483,6 +483,35 @@ h1 .role {
   padding: 68px 0 40px
 }
 
+.bottom .overline {
+  color: #a9d4c6
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -56px;
+  z-index: 100;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700
+}
+
+.skip-link:focus {
+  top: 12px
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px
+}
+
+.bottom a:focus-visible {
+  outline-color: #a9d4c6
+}
+
 .bottomGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -868,14 +897,32 @@ h1 .role {
 }
 
 .career-entry {
-  border-left: 2px solid #9bb7ab;
+  border-left: 2px solid transparent;
   padding: 11px 0 43px 34px;
   position: relative
 }
 
+.career-entry::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #9bb7ab
+}
+
+.career-step:first-child .career-entry::before {
+  top: 28px
+}
+
 .career-step:last-child .career-entry {
-  border-color: transparent;
   padding-bottom: 0
+}
+
+.career-step:last-child .career-entry::before {
+  bottom: auto;
+  height: 28px
 }
 
 .career-dot {
@@ -1162,6 +1209,15 @@ h1 .role {
   gap: 12px;
   flex-wrap: wrap;
   padding: 18px
+}
+
+.award-note {
+  display: block;
+  margin-top: -6px;
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5
 }
 
 .award-customer {

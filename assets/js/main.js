@@ -15,6 +15,7 @@
       if (modal && typeof modal.showModal === 'function') {
         event.preventDefault();
         if (!modal.open) modal.showModal();
+        history.replaceState(null, '', '#' + modal.id);
       }
     }
   });
@@ -53,4 +54,18 @@
       showImage(trigger);
     }
   });
+})();
+
+(() => {
+  const openFromHash = () => {
+    const modal = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (modal && modal.matches('dialog.case-dialog') && !modal.open) modal.showModal();
+  };
+  document.querySelectorAll('dialog.case-dialog').forEach(modal => {
+    modal.addEventListener('close', () => {
+      if (location.hash === '#' + modal.id) history.replaceState(null, '', location.pathname + location.search);
+    });
+  });
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
 })();
