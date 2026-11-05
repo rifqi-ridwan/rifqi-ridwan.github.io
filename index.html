@@ -15,6 +15,7 @@
     <meta content="Selected commerce platform engineering, production systems, and independent projects."
         property="og:description" />
     <meta content="https://rifqi-ridwan.github.io/" property="og:url" />
+    <script>document.documentElement.classList.add("js")</script>
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
@@ -23,7 +24,8 @@
     <header class="topbar">
         <div class="shell topinner"><a class="identity" href="#home">Muhammad Rifqi<span>Senior Software
                     Engineer</span></a>
-            <nav aria-label="Main navigation" class="nav"><a href="#projects">Projects</a><a
+            <button aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button"><span aria-hidden="true" class="nav-icon"></span></button>
+            <nav aria-label="Main navigation" class="nav" id="site-nav"><a href="#projects">Projects</a><a
                     href="#experience">Experience</a><a href="#skills">Skills</a><a href="#about">About</a><a href="assets/files/cv.pdf" rel="noopener noreferrer"
                     target="_blank">CV</a><a class="contactNav" href="#contact">Contact</a></nav>
         </div>
@@ -80,7 +82,7 @@
                                         experiment</small></div>
                                 <div><b>80–84%</b><small>Authenticity Guaranteed customer satisfaction</small></div>
                             </div>
-                            <div class="outcome">Three large features released through to 100% rollout with no major bugs and no deployment issues.</div>
+                            <div class="outcome">Three large features released with no rollbacks and no production incidents.</div>
                             <div class="decisions">
                                 <div><strong>Feature scope</strong><span>Three new features across multiple services.</span></div>
                                 <div><strong>My contribution</strong><span>Main engineering point of contact across
@@ -214,17 +216,16 @@
                             <div class="eyebrow">Product design · Node.js / TypeScript</div>
                             <h3>CAT examination platform</h3>
                             <p>Designed and deployed a university examination platform with nine question types, proctored exam sessions, and AI-assisted essay grading that teachers review and finalize. Built with real classroom adoption.</p>
-                            <div class="chips"><span>Fastify</span><span>PostgreSQL</span><span>Drizzle</span><span>Docker</span><span>Gemini</span></div><button aria-haspopup="dialog"
-                                class="case-trigger project-trigger" data-case="case4" type="button">Read full case
-                                study</button>
                             <div class="proof"><strong>In production · as of Nov 2026</strong><br />3 teachers · 9 classes · 387 registered students · 9 exam packages · 16 active exam sessions
                             </div>
+                            <div class="chips"><span>Fastify</span><span>PostgreSQL</span><span>Drizzle</span><span>Docker</span><span>Gemini</span></div>
                         </div><button aria-label="Enlarge CAT platform dashboard screenshot" class="cat-zoom"
                             data-image-src="assets/img/cat-exam-dashboard-redacted.png"
                             data-image-title="CAT examination platform · redacted dashboard" type="button"><img
                                 alt="University CAT exam-management dashboard with lecturer identities redacted"
                                 loading="lazy" src="assets/img/cat-exam-dashboard-redacted.png" /></button>
                         <div class="micro">Dashboard preview with lecturer names removed.</div>
+                        <button aria-haspopup="dialog" class="case-trigger" data-case="case4" type="button">Read full case study</button>
                     </article>
                 </div>
             </div>
@@ -580,7 +581,7 @@
                 <section class="modal-section">
                     <h3>Delivery</h3>
                     <p>Coordinated cross-team delivery with Product, QA, and engineering teams, integrating backend
-                        changes across multiple services. The three features were released through to 100% rollout with no major bugs and no deployment issues.</p>
+                        changes across multiple services. The three features were released through to 100% rollout with no rollbacks and no production incidents.</p>
                 </section>
                 <section class="modal-section">
                     <h3>Product outcomes</h3>

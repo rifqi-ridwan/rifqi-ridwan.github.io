@@ -349,7 +349,7 @@ h1 .role {
 
 .decisions div {
   display: grid;
-  grid-template-columns: 98px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: 12px;
   border-top: 1px solid var(--line);
   padding-top: 11px;
@@ -377,7 +377,7 @@ h1 .role {
 
 .independent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px
 }
 
@@ -628,10 +628,15 @@ button:focus-visible {
   }
 
   .nav {
-    gap: 13px;
+    gap: 8px;
+    justify-content: space-between;
     overflow-x: auto;
     width: 100%;
     padding: 5px 0
+  }
+
+  .nav .contactNav {
+    padding: 8px 12px
   }
 
   .nav a {
@@ -695,7 +700,8 @@ button:focus-visible {
   }
 
   .decisions div {
-    grid-template-columns: 82px 1fr
+    grid-template-columns: 1fr;
+    gap: 3px
   }
 }
 
@@ -1474,4 +1480,215 @@ button:focus-visible {
 
 .image-dialog #portfolio-image-full {
   max-width: 100%;
+}
+
+/* V5: full-width independent card on desktop, continuous mobile timeline line */
+@media(min-width:851px) {
+  .indcard {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    grid-template-rows: 1fr auto auto
+  }
+
+  .indcard .content {
+    grid-row: 1 / span 3;
+    border-right: 1px solid var(--line)
+  }
+
+  .indcard .cat-zoom {
+    grid-column: 2;
+    grid-row: 1
+  }
+
+  .indcard .micro {
+    grid-column: 2;
+    grid-row: 2
+  }
+
+  .indcard img {
+    height: 100%;
+    aspect-ratio: auto
+  }
+
+  .indcard .micro {
+    padding: 10px 28px 0
+  }
+
+  .indcard > .case-trigger {
+    grid-column: 2;
+    grid-row: 3
+  }
+}
+
+.indcard > .case-trigger {
+  width: auto;
+  margin: 12px 28px 0;
+  padding: 17px 0 22px
+}
+
+.indcard .cat-zoom {
+  padding: 22px 22px 0
+}
+
+.indcard .cat-zoom img {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  object-position: top left
+}
+
+@media(max-width:680px) {
+  .career-period {
+    position: relative
+  }
+
+  .career-period::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #9bb7ab
+  }
+
+  .career-step:first-child .career-period::before {
+    display: none
+  }
+}
+
+@media(max-width:380px) {
+  .nav {
+    gap: 5px
+  }
+
+  .nav a {
+    font-size: 11.5px
+  }
+
+  .nav .contactNav {
+    padding: 7px 10px
+  }
+}
+
+/* V6: compact mobile header with a menu button (only when JavaScript is available) */
+.nav-toggle {
+  display: none
+}
+
+.nav-icon,
+.nav-icon::before,
+.nav-icon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px
+}
+
+.nav-icon {
+  position: relative;
+  transition: background .15s
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: top .2s, transform .2s
+}
+
+.nav-icon::before {
+  top: -6px
+}
+
+.nav-icon::after {
+  top: 6px
+}
+
+.nav-toggle[aria-expanded="true"] .nav-icon {
+  background: transparent
+}
+
+.nav-toggle[aria-expanded="true"] .nav-icon::before {
+  top: 0;
+  transform: rotate(45deg)
+}
+
+.nav-toggle[aria-expanded="true"] .nav-icon::after {
+  top: 0;
+  transform: rotate(-45deg)
+}
+
+@media(max-width:620px) {
+  .js .topinner {
+    flex-wrap: nowrap;
+    min-height: 0;
+    padding: 10px 0;
+    position: relative
+  }
+
+  .js .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid #c9d7d0;
+    border-radius: 4px;
+    cursor: pointer
+  }
+
+  .js .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: auto;
+    padding: 6px 12px 12px;
+    overflow: visible;
+    background: #f6f5f1;
+    border: 1px solid var(--line);
+    border-top: 0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .08)
+  }
+
+  .js .nav.open {
+    display: flex
+  }
+
+  .js .nav a {
+    padding: 13px 4px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--line)
+  }
+
+  .js .nav .contactNav {
+    margin-top: 10px;
+    padding: 13px;
+    text-align: center;
+    border-bottom: 0
+  }
+}
+
+.indcard .proof {
+  margin-top: 20px
+}
+
+.indcard .chips {
+  margin-top: auto;
+  padding-top: 22px
+}
+
+@media(max-width:850px) {
+  .indcard .content {
+    border-bottom: 1px solid var(--line)
+  }
 }
